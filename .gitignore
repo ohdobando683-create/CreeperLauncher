@@ -1,0 +1,28 @@
+﻿# Configuración e historial local
+config.json
+launcher_stats.json
+last_launch_command.txt
+
+# Datos personales y archivos de Minecraft
+minecraft/
+mods/
+profiles/
+backups/
+saves/
+
+# Respaldos y temporales
+*.backup_*.py
+*.bak
+*.tmp
+
+# Compilación y entornos
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+build/
+dist/
+
+# Herramientas locales
+.vscode/
+.idea/

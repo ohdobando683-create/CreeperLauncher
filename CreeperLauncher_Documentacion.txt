@@ -1,0 +1,169 @@
+﻿CREEPER LAUNCHER
+DOCUMENTACION ACTUALIZADA DEL PROYECTO
+======================================
+
+Actualizado: 11/10/2026 18:34
+Sistema: Windows 11
+Terminal: PowerShell
+Carpeta: C:\Users\ohdob\CreeperLauncher
+
+1. OBJETIVO
+-----------
+Launcher de Minecraft en Python con Tkinter.
+Se debe conservar el diseno negro y verde oscuro y evitar cambios
+innecesarios en las funciones que ya funcionan.
+
+2. DISENO
+---------
+Nombre: Creeper Launcher
+Ventana inicial: 720 x 570
+
+Colores:
+Fondo: #090B0A
+Panel: #111713
+Entradas: #1A241D
+Verde principal: #1F5B35
+Verde hover: #2B7545
+Texto: #E8F2EA
+Texto suave: #A8B8AC
+Bordes: #294333
+
+3. FUNCIONES DEL LAUNCHER
+-------------------------
+- save()
+- task()
+- install()
+- refresh()
+- import_mods()
+- sync_mods()
+- show_startup_window()
+- play()
+- refresh_versions()
+- choose_version()
+
+Funciones identificadas en el proyecto:
+- Seleccion de versiones Release, Snapshot, Alpha y Beta.
+- Seleccion de Vanilla, Fabric, Forge, NeoForge y Quilt.
+- Configuracion de RAM.
+- Instalacion de versiones mediante minecraft_launcher_lib.
+- Importacion y sincronizacion de mods .jar.
+- Inicio de Minecraft con Java.
+- Guardado de configuracion.
+- Ventana de inicio con barra animada.
+- Registro del comando de inicio para diagnostico.
+
+4. CONFIGURACION ACTUAL
+-----------------------
+{
+    "version": "b1.0",
+    "loader": "Vanilla",
+    "ram": 4
+}
+
+5. ESTADO DE LA BARRA DE CARGA
+------------------------------
+El usuario confirma que la barra de carga ya esta hecha.
+Conservar su estilo y comportamiento. No sustituirla sin permiso.
+
+6. INICIO DE MINECRAFT SIN TERMINAL
+-----------------------------------
+Se modifico la llamada a subprocess.Popen en launcher.py para usar
+STARTUPINFO, STARTF_USESHOWWINDOW y CREATE_NO_WINDOW en Windows.
+
+La llamada tambien conserva:
+- El directorio de trabajo de Minecraft.
+- El objeto process que se entrega a show_startup_window().
+- La ventana de inicio de Creeper Launcher.
+
+El usuario confirma que el resultado funciona correctamente:
+Minecraft se abre sin la terminal negra y el launcher mantiene
+su ventana de carga.
+
+7. COMPILAR LA APLICACION
+-------------------------
+Entrar al proyecto:
+Set-Location "C:\Users\ohdob\CreeperLauncher"
+
+Comprobar sintaxis:
+.\.venv\Scripts\python.exe -m py_compile .\launcher.py
+
+Compilar el ejecutable grafico:
+.\.venv\Scripts\python.exe -m PyInstaller --noconfirm --clean --windowed --onedir --name "CreeperLauncher" .\launcher.py
+
+Ejecutable esperado:
+C:\Users\ohdob\CreeperLauncher\dist\CreeperLauncher\CreeperLauncher.exe
+
+IMPORTANTE:
+Conservar la carpeta dist\CreeperLauncher completa, incluida
+_internal. No mover solo el ejecutable.
+
+8. RUTAS Y ARCHIVOS
+-------------------
+launcher.py
+    Codigo fuente principal.
+
+config.json
+    Version, cargador y RAM seleccionados.
+
+minecraft\
+    Archivos, versiones, assets y runtime de Minecraft.
+
+mods\
+    Mods administrados por el launcher.
+
+profiles\
+    Carpeta de perfiles existente.
+
+.venv\
+    Entorno virtual de Python.
+
+dist\CreeperLauncher\
+    Aplicacion compilada.
+
+9. COPIAS DE SEGURIDAD
+----------------------
+- launcher.py.backup
+- launcher.py.backup2
+- launcher.py.backup3
+- launcher.py.backup4
+- launcher.py.backup_exe_20261011_182512
+- launcher.py.backup_hide_console_20261011_183232
+- launcher.py.backup_progress_20261011_180950
+- launcher.py.backup_v2_20261011_181717
+
+Crear una copia de seguridad antes de realizar futuros cambios.
+
+10. REGLAS PARA CONTINUAR
+-------------------------
+1. Trabajar desde PowerShell.
+2. Leer el codigo actual antes de modificarlo.
+3. No reemplazar el launcher completo sin autorizacion.
+4. No cambiar el diseno, botones ni funciones existentes sin permiso.
+5. Crear una copia de seguridad antes de cada parche.
+6. Comprobar la sintaxis antes de compilar.
+7. Probar el ejecutable despues de compilar.
+8. No asumir que un cambio funciono sin comprobarlo.
+9. Mantener la carpeta de Minecraft y sus datos.
+10. Conservar la barra de carga y el inicio sin terminal.
+
+11. MENSAJE PARA UN NUEVO CHAT
+------------------------------
+Estoy desarrollando CreeperLauncher en Windows 11 con Python,
+Tkinter y minecraft_launcher_lib.
+
+Ruta:
+C:\Users\ohdob\CreeperLauncher
+
+El launcher ya tiene interfaz negra y verde oscuro, selector de
+versiones Release, Snapshot, Alpha y Beta, cargadores, RAM, gestion
+de mods, instalacion y lanzamiento de Minecraft.
+
+La barra de carga ya esta hecha. Tambien esta corregido el inicio
+de Minecraft para ocultar la terminal negra en Windows. El usuario
+confirma que funciona.
+
+Antes de modificar cualquier cosa, revisar los archivos actuales.
+No cambiar funciones ni diseno que ya funcionen. Trabajar desde
+PowerShell y crear copias de seguridad.
+
+FIN DE LA DOCUMENTACION
